@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <title>Viajes, hoteles, vuelos, paquetes y más | almundo.com</title>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AngularCamp</title>
+  <meta name="description" content="Venta de vuelos y hoteles online. Paquetes Turísticos, Cruceros, Hoteles, Autos, Trenes y Promociones Aéreas. Viajes con el mejor precio y servicio.">
+  <meta name="keywords" content="hoteles, viajes on line, hoteles baratos, vuelos baratos, pasajes aereos, pasajes baratos, hospedaje, autos, seguro de viaje, cruceros, disney, alojamiento barato, viajes, promociones aereas, viajes en cuotas, excursiones, ">
+
+  <link rel="icon" type="image/png" href="./assets/images/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="./assets/styles/results.css">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/header.css">
+  <link rel="stylesheet" type="text/css" href="./assets/styles/footer.css">
+  <link rel="stylesheet" type="text/css" href="https://almundo.com.ar/hotels/static/101/css/result-pkg.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
-<body>  
-  <ac-app></ac-app>
-  <script type="text/javascript" src="app.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<body>
+
+  <am-header></am-header>
+
+    <div ui-view></div>
+
+  <am-footer></am-footer>
+
+  <script src="app.js"></script>
 </body>
+
 </html>

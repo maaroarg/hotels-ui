@@ -1,18 +1,16 @@
-import angular from 'angular'
-import uiRouter from 'angular-ui-router'
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 
-import common from './common/common'
-import components from './components/components'
-import { AppComponent } from './app.component'
+import common from './common';
+import results from './results';
 
 const root = angular
-  .module('angularCamp', [
+  .module('almundoApp', [
     uiRouter,
     common,
-    components
-  ])
-  .component('acApp', AppComponent)
+    results
+  ]);
 
-document.addEventListener('DOMContentLoaded', () => angular.bootstrap(document, ['angularCamp']))
+document.addEventListener('DOMContentLoaded', () => angular.bootstrap(document, ['almundoApp']));
 
-export default root
+export default root;

@@ -1,0 +1,10 @@
+footer {
+  background-color: #002c77;
+  color: #fff;
+}
+footer .info {
+  font-size: 12px;
+}
+footer .space {
+  margin-top: 10px;
+}

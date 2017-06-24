@@ -1,0 +1,37 @@
+<div class="results-container">
+  <topbar></topbar>
+
+  <div class="row">
+    <div class="col-md-3 col-xs-12">
+      <sidebar filters="resultsCtrl.filters" hotels="resultsCtrl.hotels"></sidebar>
+    </div>
+
+    <div class="col-md-9 col-xs-12">
+      <div class="row order">
+        <div class="col-xs-12 col-md-12">
+          <span class="order-info">Ordenar</span>
+          <select class="form-control" ng-disabled="resultsCtrl.hotels.length == 0">
+            <option>Mas relevantes</option>
+            <option>Precio mas bajo</option>
+            <option>Precio mas alto</option>
+            <option>Menos estrellas</option>
+            <option>Mas estrellas</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row hotel-row" ng-repeat="hotel in resultsCtrl.hotels" ng-hide="resultsCtrl.hotels.length == 0">
+        <cluster hotel="hotel"></cluster>
+      </div>
+
+      <div class="col-md-12 col-xs-12 not-results" ng-hide="resultsCtrl.hotels.length > 0">
+        <p><strong>Lo sentimos. No encontramos disponibilidad para tu búsqueda</strong></p>
+        <p>La fecha de ingreso debe ser, como mínimo, 2 días posterior al día de hoy. Por favor intentá una nueva búsqueda</p>
+      </div>
+
+      <div class="row row-pagination" ng-hide="resultsCtrl.hotels.length == 0">
+        <ul uib-pagination boundary-links="true" total-items="resultsCtrl.hotels.length" ng-model="resultsCtrl.currentPage" max-size="resultsCtrl.maxSize" class="pagination-sm" previous-text="&laquo;" next-text="&raquo;" first-text="Inicio" last-text="Fin"></ul>
+      </div>
+    </div>
+  </div>
+</div>

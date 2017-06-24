@@ -1,0 +1,34 @@
+<div class="col-md-4 col-xs-12">
+  <div class="recommended" ng-hide="$ctrl.hotel.isRecommended">
+    <span>¡Hotel recomendado!</span>
+  </div>
+  <div class="carousel" style="background-image: url({{$ctrl.hotel.images[0]}})"></div>
+</div>
+
+<div class="col-md-4 col-xs-12">
+  <div class="hotel-name">
+    <a>{{$ctrl.hotel.name}}</a>
+  </diV
+  <p class="stars">
+    <span ng-repeat="i in $ctrl.getStars($ctrl.hotel.stars) track by $index">
+      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    </span>
+  </p>
+  <p class="mealplan">
+    <i class="fa" ng-class="$ctrl.mealplans[$ctrl.hotel.mealplan].icon" aria-hidden="true"></i> {{$ctrl.mealplans[$ctrl.hotel.mealplan].description}}
+  </p>
+  <p>
+    <span ng-repeat="i in $ctrl.getAmenitiesLength($ctrl.hotel.amenities) track by $index">
+      <i class="fa" ng-class="$ctrl.mapAmenities($ctrl.hotel.amenities)[$index]" aria-hidden="true"></i>
+    </span>
+  </p>
+</div>
+
+<div class="col-md-4 col-xs-12 price-col">
+  <p class="price-text">Precio por noche por habitación</p>
+  <p class="price"><span class="price-currency">ARS</span> {{$ctrl.hotel.price | currency: '': 0}}</p>
+  <p class="tax-text">Impuestos y tasas no incluídos</p>
+  <a class="btn btn-hotel-detail">Ver hotel</a>
+  <p class="payment-extra">Pagá en cuotas</p>
+  <p class="payment-extra">Pagá en destino</p>
+</div>

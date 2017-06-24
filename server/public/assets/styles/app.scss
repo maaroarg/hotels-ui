@@ -1,0 +1,25 @@
+$icon-font-path: "bootstrap-sass/assets/fonts/bootstrap/";
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+@import "~angularjs-slider/dist/rzslider.css";
+
+@import '~toastr/build/toastr.min.css';
+
+@import "colors.scss";
+
+body {
+  background-color: $grey-background !important;
+}
+
+@media only screen and (min-width: 1152px) {
+  .content {
+    min-height: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    min-height: 450px;
+  }
+}
