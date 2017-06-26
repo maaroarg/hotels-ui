@@ -2,7 +2,8 @@
 UI de resultado de búsqueda de hoteles
 
 ## Ejecutar la aplicación
-La app se levanta en modo Development utilizando docker-compose. Esto evita que tener que instalar el entorno a mano. Igualmente, si se desea instalarlo, requiere mongodb y NodeJs.
+La app se levanta utilizando docker-compose. Esto evita que tener que instalar el entorno a mano. Si se desea correr a mano, ejecutar npm run start
+
 * instalar docker y docker-compose
 * clonar el repo
 * ejecutar docker-compose build
