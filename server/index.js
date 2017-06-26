@@ -3,6 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const config = require('./config/config');
 
 const app = express();
 
@@ -18,4 +19,4 @@ app.get('*', (req,res,next) => {
   }
 });
 
-app.listen(3000, () => console.log('Hotel UI is running on port 3000...'));
+app.listen(config.app.port, () => console.log(`Hotel UI is running on port ${config.app.port}...`));
