@@ -13,6 +13,6 @@ export default angular.module('results', [uirouter])
   .service('ResultsService', ResultsService)
   .controller('ResultsController', ResultsController)
   .component('cluster', ClusterComponent)
-  .component('filterSidebar', SidebarComponent)
-  .component('infoTopbar', TopbarComponent)
+  .component('sidebar', SidebarComponent)
+  .component('topbar', TopbarComponent)
   .name;

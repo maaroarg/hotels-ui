@@ -10,16 +10,19 @@
     <a>{{$ctrl.hotel.name}}</a>
   </diV
   <p class="stars">
-    <span ng-repeat="i in $ctrl.getStars($ctrl.hotel.stars) track by $index">
-      <i class="fa fa-star star-yellow" aria-hidden="true"></i>
+    <span ng-repeat="i in $ctrl.starRange($ctrl.hotel.stars) track by $index">
+      <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
     </span>
   </p>
   <p class="mealplan">
-    <i class="fa" ng-class="$ctrl.mealplans[$ctrl.hotel.mealplan].icon" aria-hidden="true"></i> {{$ctrl.mealplans[$ctrl.hotel.mealplan].description}}
+    <i class="glyphicon glyphicon-bed" aria-hidden="true"></i> Solo la habitación
   </p>
   <p>
-    <span ng-repeat="i in $ctrl.getAmenitiesLength($ctrl.hotel.amenities) track by $index">
-      <i class="fa" ng-class="$ctrl.mapAmenities($ctrl.hotel.amenities)[$index]" aria-hidden="true"></i>
+    <span>
+      <i class="glyphicon glyphicon-tent" aria-hidden="true"></i>
+      <i class="glyphicon glyphicon-bell" aria-hidden="true"></i>
+      <i class="glyphicon glyphicon-picture" aria-hidden="true"></i>
+      <i class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></i>
     </span>
   </p>
 </div>

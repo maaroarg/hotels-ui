@@ -5,15 +5,125 @@
     <a class="map">Ver hoteles en el mapa</a>
   </div>
 
-  <div>
-      Vale por unos filtros
+  <!-- Filtros -->
+  <div class="filters-container">
+    <div class="filters-title">
+      <h2>Filtrar</h2>
+    </div>
+    <uib-accordion>
+      <div uib-accordion-group class="panel-default" is-open="$ctrl.filters.hotelName">
+        <uib-accordion-heading>
+          <div class="row">
+            <div class="col-md-10">
+              <i class="glyphicon glyphicon-search" aria-hidden="true"></i> Nombre del hotel
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+        </uib-accordion-heading>
+        <input class="search-input" type="text" placeholder="Ingrese el nombre del hotel" ng-disabled="$ctrl.hotels.length == 0"/>
+        <input class="btn btn-search" type="submit" value="Aceptar" ng-disabled="$ctrl.hotels.length == 0"/>
+      </div>
+    </uib-accordion>
+
+    <uib-accordion>
+      <div uib-accordion-group class="panel-default" is-open="$ctrl.filters.price">
+        <uib-accordion-heading>
+          <div class="row">
+            <div class="col-md-10">
+              $ Precio por noche
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+        </uib-accordion-heading>
+
+        <rzslider rz-slider-model="$ctrl.slider.min" rz-slider-high="$ctrl.slider.max" rz-slider-options="$ctrl.slider.options"></rzslider>
+      </div>
+    </uib-accordion>
+
+    <uib-accordion>
+      <div uib-accordion-group class="panel-default" is-open="$ctrl.filters.stars">
+        <uib-accordion-heading>
+          <div class="row">
+            <div class="col-md-10">
+              <i class="glyphicon glyphicon-stars" aria-hidden="true"></i> Estrellas
+            </div>
+            <div class="col-md-2">
+            </div>
+          </div>
+        </uib-accordion-heading>
+
+        <div class="stars-filter">
+          <ul>
+            <li>
+              <label for="all-stars">
+                <input type="checkbox" checked="checked" class="all" id="all-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text"><strong>Todas las estrellas ({{$ctrl.hotels.length}})</strong></span>
+              </label>
+            </li>
+            <li>
+              <label for="five-stars">
+                <input type="checkbox" class="all" id="five-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text">
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                </span>
+              </label>
+            </li>
+            <li>
+              <label for="four-stars">
+                <input type="checkbox" class="all" id="four-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text">
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                </span>
+              </label>
+            </li>
+            <li>
+              <label for="three-stars">
+                <input type="checkbox" class="all" id="three-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text">
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                </span>
+              </label>
+            </li>
+            <li>
+              <label for="two-stars">
+                <input type="checkbox" class="all" id="two-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text">
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                </span>
+              </label>
+            </li>
+            <li>
+              <label for="one-stars">
+                <input type="checkbox" class="all" id="one-stars" ng-disabled="$ctrl.hotels.length == 0"/>
+                <span class="stars-text">
+                  <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
+                </span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </uib-accordion>
   </div>
 </aside>
 
 <div class="row visible-xs submenu-mobile">
   <ul>
-    <li><a>Modificar busqueda <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+    <li><a>Modificar busqueda <i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a></li>
     <li><a>Ver hoteles en el mapa</a></li>
-    <li><a>Filtrar <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
+    <li><a>Filtrar <i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a></li>
   </ul>
 </div>

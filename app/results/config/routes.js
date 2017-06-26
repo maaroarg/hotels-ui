@@ -1,7 +1,7 @@
 import template from './../views/results.template.html';
 
 /*@ngInject*/
-export default ($stateProvider) => {
+export default ($stateProvider,$urlRouterProvider) => {
   $stateProvider
     .state('results', {
       url: '/',
@@ -13,5 +13,6 @@ export default ($stateProvider) => {
           return ResultsService.getResults();
         }
       }
-    })
+    });
+    $urlRouterProvider.otherwise('/');
 }
