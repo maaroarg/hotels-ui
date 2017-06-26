@@ -10,7 +10,7 @@ La app se levanta en modo Development utilizando docker-compose. Esto evita que 
 * ingresar http://localhost:8080
 
 ## Herramientas utilizadas
-* Angualar 1.6
+* Angular 1.6
 * Babelify
 * Browserify
 * Uglifyify
