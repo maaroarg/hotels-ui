@@ -5,5 +5,5 @@ import sidebarController from './sidebar.controller';
 export const SidebarComponent = {
   template: template,
   controller: sidebarController,
-  bindings: {'filters': '=', 'hotels': '='}
+  bindings: {'filters': '<', 'hotels': '<', onUpdateFilters : '&'}
 };

@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-3 col-xs-12">
-      <sidebar filters="resultsCtrl.filters" hotels="resultsCtrl.hotels"></sidebar>
+      <sidebar filters="resultsCtrl.filters" hotels="resultsCtrl.hotels" on-update-filters="resultsCtrl.updateFilters($event);"></sidebar>
     </div>
 
     <div class="col-md-9 col-xs-12">
@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <div class="row hotel-row" ng-repeat="hotel in resultsCtrl.hotels" ng-hide="resultsCtrl.hotels.length == 0">
+      <div class="row hotel-row" ng-repeat="hotel in resultsCtrl.hotels | filter: resultsCtrl.filtersData.hotelName" ng-hide="resultsCtrl.hotels.length == 0">
         <cluster hotel="hotel"></cluster>
       </div>
 

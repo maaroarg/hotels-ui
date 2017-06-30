@@ -11,7 +11,7 @@
       <h2>Filtrar</h2>
     </div>
     <uib-accordion>
-      <div uib-accordion-group class="panel-default">
+      <div uib-accordion-group class="panel-default" is-open="$ctrl.filters.hotelName">
         <uib-accordion-heading>
           <div class="row">
             <div class="col-md-10">
@@ -21,8 +21,7 @@
             </div>
           </div>
         </uib-accordion-heading>
-        <input class="search-input" type="text" placeholder="Ingrese el nombre del hotel"/>
-        <input class="btn btn-search" type="submit" value="Aceptar"/>
+        <input class="search-input" type="text" ng-change="$ctrl.filterAction();" ng-model="$ctrl.filtersData.hotelName" placeholder="Ingrese el nombre del hotel"/>
       </div>
     </uib-accordion>
 
@@ -38,13 +37,13 @@
           </div>
         </uib-accordion-heading>
 
-        <rzslider rz-slider-model="100" rz-slider-high="300"></rzslider>
+        <rzslider ng-click="$ctrl.filterAction()" rz-slider-model="$ctrl.filtersData.slider.min" rz-slider-high="$ctrl.filtersData.slider.max" rz-slider-options="$ctrl.slider.options"></rzslider>
 
       </div>
     </uib-accordion>
 
     <uib-accordion>
-      <div uib-accordion-group class="panel-default">
+      <div uib-accordion-group class="panel-default" is-open="$ctrl.filters.stars">
         <uib-accordion-heading>
           <div class="row">
             <div class="col-md-10">
@@ -55,17 +54,17 @@
           </div>
         </uib-accordion-heading>
 
-        <div class="stars-filter">
+        <div class="stars-filter" ng-click="$ctrl.filterAction()">
           <ul>
             <li>
               <label for="all-stars">
-                <input type="checkbox" checked="checked" class="all" id="all-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st0" type="checkbox" checked="checked" class="all" id="all-stars"/>
                 <span class="stars-text"><strong>Todas las estrellas</strong></span>
               </label>
             </li>
             <li>
               <label for="five-stars">
-                <input type="checkbox" class="all" id="five-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st5" type="checkbox" class="all" id="five-stars"/>
                 <span class="stars-text">
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
@@ -77,7 +76,7 @@
             </li>
             <li>
               <label for="four-stars">
-                <input type="checkbox" class="all" id="four-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st4" type="checkbox" class="all" id="four-stars"/>
                 <span class="stars-text">
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
@@ -88,7 +87,7 @@
             </li>
             <li>
               <label for="three-stars">
-                <input type="checkbox" class="all" id="three-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st3" type="checkbox" class="all" id="three-stars"/>
                 <span class="stars-text">
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
@@ -98,7 +97,7 @@
             </li>
             <li>
               <label for="two-stars">
-                <input type="checkbox" class="all" id="two-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st2" type="checkbox" class="all" id="two-stars"/>
                 <span class="stars-text">
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
@@ -107,7 +106,7 @@
             </li>
             <li>
               <label for="one-stars">
-                <input type="checkbox" class="all" id="one-stars"/>
+                <input ng-model="$ctrl.filtersData.stars.st1" type="checkbox" class="all" id="one-stars"/>
                 <span class="stars-text">
                   <i class="glyphicon glyphicon-star star-yellow" aria-hidden="true"></i>
                 </span>
