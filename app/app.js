@@ -7,7 +7,7 @@ import results from './results';
 const root = angular
   .module('almundoApp', [
     uiRouter,
-    //common,
+    common,
     results
   ]);
 
